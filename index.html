@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APEX ROLEPLAY</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+    background: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c') no-repeat center/cover;
+}
+
+/* Overlay fix */
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.85), rgba(0,50,0,0.8));
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* NAV */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: rgba(0,0,0,0.6);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 45px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+.logo span {
+    color: #00ff88;
+    font-weight: bold;
+}
+
+header {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+h1 {
+    font-size: 55px;
+    color: #00ff88;
+}
+
+/* IP BOX */
+.ip-box {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(0,0,0,0.6);
+    border-radius: 15px;
+}
+
+.ip-content {
+    font-size: 20px;
+    color: #00ff88;
+}
+
+/* BUTTONS */
+.action-buttons {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+button, a {
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#copyBtn { background: #00ff88; }
+.connect-btn { background: #7a00ff; color: white; }
+.discord-btn { background: #5865F2; color: white; display:flex; align-items:center; gap:5px;}
+.discord-btn img { width:18px; }
+
+/* SECTION */
+.section {
+    padding: 60px 20px;
+    text-align: center;
+    max-width: 900px;
+    margin: auto;
+}
+
+.section h2 {
+    color: #00ff88;
+}
+
+/* FEATURES */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.feature {
+    background: rgba(0,0,0,0.6);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.feature h3 {
+    color: #00ff88;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+    h1 { font-size: 35px; }
+    .action-buttons { flex-direction: column; }
+    button, a { width: 100%; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">
+        <img src="logo.png">
+        <span>APEX RP</span>
+    </div>
+</nav>
+
+<header>
+    <h1>APEX ROLEPLAY</h1>
+    <p>Welcome to APEX ROLEPLAY</p>
+
+    <div class="ip-box">
+        <div id="ip" class="ip-content">148.113.25.124:7030</div>
+
+        <div class="action-buttons">
+            <button id="copyBtn" onclick="copyIP()">📋 COPY IP</button>
+            <a href="#" class="connect-btn" onclick="connectServer()">🎮 CONNECT NOW</a>
+            <a href="https://discord.gg/zRrC3X6y" target="_blank" class="discord-btn">
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png">
+                DISCORD
+            </a>
+        </div>
+    </div>
+</header>
+
+<!-- ABOUT -->
+<div class="section">
+    <h2>About APEX ROLEPLAY</h2>
+    <p>
+        APEX ROLEPLAY is one of the best GTA SA-MP servers in the Kerala community.
+        With active players, smooth gameplay, and a strong Malayalam base,
+        the server delivers a high-quality roleplay experience.
+    </p>
+</div>
+
+<!-- FEATURES -->
+<div class="section">
+    <h2>Server Features</h2>
+
+    <div class="features-grid">
+        <div class="feature">
+            <h3>🎭 High Quality Roleplay</h3>
+            <p>Smooth and engaging gameplay with active players.</p>
+        </div>
+
+        <div class="feature">
+            <h3>👮 Police & Government</h3>
+            <p>Join powerful factions and control the city.</p>
+        </div>
+
+        <div class="feature">
+            <h3>💼 Business System</h3>
+            <p>Own businesses and build your empire.</p>
+        </div>
+
+        <div class="feature">
+            <h3>🔫 Gangs & Wars</h3>
+            <p>Fight for territory and dominate the streets.</p>
+        </div>
+
+        <div class="feature">
+            <h3>🚗 Custom Vehicles</h3>
+            <p>Drive stylish vehicles with smooth gameplay.</p>
+        </div>
+
+        <div class="feature">
+            <h3>🌴 Kerala Community</h3>
+            <p>Friendly Malayalam player base and active community.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+function copyIP(){
+    let ip = document.getElementById("ip").innerText;
+    navigator.clipboard.writeText(ip);
+    document.getElementById("copyBtn").innerText="COPIED!";
+    setTimeout(()=>{document.getElementById("copyBtn").innerText="📋 COPY IP"},2000);
+}
+
+function connectServer(){
+    alert("Open SAMP → Favorites → Add Server → 148.113.25.124:7030");
+}
+</script>
+
+</body>
+</html>
